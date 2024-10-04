@@ -40,4 +40,19 @@ class Solution {
     }
 }
 
-Solution2: 
+Solution2: we will use Hashmap for this to reduce time complexity
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer,Integer> Addvalue = new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            Integer IndexAddvalue = Addvalue.get(nums[i]);
+            if (IndexAddvalue != null){
+                return new int[]{i,IndexAddvalue};
+            }
+            Addvalue.put(target - nums[i], i);
+
+
+        }
+        return nums;
+    }
+}
